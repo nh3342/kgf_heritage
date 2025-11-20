@@ -128,8 +128,11 @@ page = st.sidebar.radio(
 # PAGE: ARTICLES
 # ---------------------------------------------------
 if page == "Articles":
-    st.markdown("<div class='content-box'>", unsafe_allow_html=True)
-    st.markdown("<div class='section-title'>📚 Featured Article</div>", unsafe_allow_html=True)
+    st.markdown("""
+    <div class='content-box'>
+        <div class='section-title'>📚 Featured Article</div>
+    </div>
+    """, unsafe_allow_html=True)
 
     article_path = Path("assets/articles/article.html")
 
@@ -149,26 +152,47 @@ if page == "Articles":
 # PAGE: MAPS & RESOURCES
 # ---------------------------------------------------
 elif page == "Maps & Resources":
-    st.markdown("<div class='content-box'>", unsafe_allow_html=True)
-    st.markdown("<div class='section-title'>🗺️ Interactive Maps & Downloads</div>", unsafe_allow_html=True)
+    st.markdown("""
+        <div class='content-box'>
+            <div class='section-title'>🗺️ Interactive Maps & Downloads</div>
+        </div>
+        """, unsafe_allow_html=True)
 
+    st.markdown("<hr style='border: 2px solid #ccc;'>", unsafe_allow_html=True)
     st.markdown("### 🎥 Kotilingeshwara Temple From Space")
+    st.markdown(
+        "<p style='font-size: 0.85rem; '>Built in 1980, this Temple boasts 1 Crore shiva linga, including one standing 33 m tall.</p>",
+        unsafe_allow_html=True
+    )
     st.video("assets/maps/KGF_Google_Earth_ZOOM-Video.mp4")
-    st.divider()
+    st.markdown("<hr style='border: 2px solid #ccc;'>", unsafe_allow_html=True)
 
-    st.markdown("### 📍 Open Interactive Map (Requires Sign in)")
+    st.markdown("### 📍 Open KGF Historical Landmarks Map (Requires Sign in)")
+    st.markdown(
+        "<p style='font-size: 0.85rem; '>Explore historical sites across KGF using this interactive map. "
+        "You can also add a location that deserves to be in the list!</p>",
+        unsafe_allow_html=True
+    )
     st.link_button(
         "KGF Historical Landmarks Map",
         "https://padlet.com/baakia560/kgf-heritage-explorer-18wq7s2fsisaalil"
     )
 
-    st.divider()
+    st.markdown("<hr style='border: 2px solid #ccc;'>", unsafe_allow_html=True)
 
     st.markdown("### 📱 QR Code : KGF Historical Landmarks Map (Requires Sign In)")
+    st.markdown(
+        "<p style='font-size: 0.85rem; '>Scan the QR from your mobile to open the map on your phone!</p>",
+        unsafe_allow_html=True
+    )
     st.image("assets/maps/KGF_Landmarks_QR.png", width=250)
 
-    st.divider()
+    st.markdown("<hr style='border: 2px solid #ccc;'>", unsafe_allow_html=True)
     st.markdown("### KGF Historical Landmarks PDF")
+    st.markdown(
+        "<p style='font-size: 0.85rem; '>Get the list of historically significant site-seeing places around KGF in a PDF format</p>",
+        unsafe_allow_html=True
+    )
     pdf_file = Path("assets/maps/Padlet - KGF Historical Landmarks.pdf")
     with open(pdf_file, "rb") as f:
         st.download_button(
@@ -178,30 +202,33 @@ elif page == "Maps & Resources":
             mime="application/pdf"
         )
 
-    st.divider()
+    st.markdown("<hr style='border: 2px solid #ccc;'>", unsafe_allow_html=True)
 
     st.markdown("</div>", unsafe_allow_html=True)
-
 
 
 # ---------------------------------------------------
 # PAGE: VIDEOS & AUDIO
 # ---------------------------------------------------
 elif page == "Videos & Audio":
-    st.markdown("<div class='content-box'>", unsafe_allow_html=True)
-    st.markdown("<div class='section-title'>🎧 Voices & Videos of KGF</div>", unsafe_allow_html=True)
+
+    st.markdown("""
+            <div class='content-box'>
+                <div class='section-title'>🎧 Voices & Videos of KGF</div>
+            </div>
+            """, unsafe_allow_html=True)
 
     st.markdown("### 🎥 Cornish Miners in KGF")
     st.video("https://youtu.be/88fcVkFJ6n8")
 
-    st.divider()
+    st.markdown("<hr style='border: 2px solid #ccc;'>", unsafe_allow_html=True)
 
     st.markdown("### 🎧 Audio Stories")
 
     st.markdown("#### 🇮🇳 Tamil — Cornish Miners in KGF")
     st.audio("assets/videos/TTS_Tamil_Audio.mp3")
 
-    st.divider()
+    st.markdown("<hr style='border: 2px solid #ccc;'>", unsafe_allow_html=True)
 
     st.markdown("#### 🇮🇳 Hindi — Cornish Miners in KGF")
     st.audio("assets/videos/Hindi_TTS_Audio.mp3")
