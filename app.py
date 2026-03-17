@@ -8,7 +8,7 @@ import base64
 # PAGE CONFIG
 # ---------------------------------------------------
 st.set_page_config(
-    page_title="KGF Heritage Explorer: A prototype website (creator: [🐙 GitHub] nh3342)",
+    page_title="KGF Heritage Explorer",
     page_icon="🪔",
     layout="wide"
 )
